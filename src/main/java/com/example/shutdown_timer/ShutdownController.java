@@ -127,7 +127,7 @@ public class ShutdownController {
             // Затем через 5 секунд выполняем команду выключения компьютера
             try {
                 Thread.sleep(5000); // Задержка 5 секунд
-                shutdownComputer(); // Включаем выключение компьютера
+//                shutdownComputer(); // Включаем выключение компьютера
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -153,29 +153,6 @@ public class ShutdownController {
             System.out.println("Команда на выключение компьютера отправлена.");
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    private void simulateKeyPress(int key1, int key2) {
-        try {
-            Robot robot = new Robot();
-
-            // Нажимаем Shift
-            robot.keyPress(key1);
-
-            // Нажимаем F2
-            robot.keyPress(key2);
-            robot.keyRelease(key2); // Отпускаем F2
-
-            // Добавляем небольшую задержку (например, 100 миллисекунд)
-            Thread.sleep(100);
-
-            // Отпускаем Shift
-            robot.keyRelease(key1);
-
-            System.out.println("Сочетание клавиш Shift + F2 отправлено!");
-        } catch (Exception e) {
-            System.err.println("Ошибка при эмуляции клавиш: " + e.getMessage());
         }
     }
 

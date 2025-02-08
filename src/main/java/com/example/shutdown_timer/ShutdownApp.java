@@ -18,6 +18,7 @@ public class ShutdownApp extends Application {
 
         stage.setTitle("ShutDownAPP!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
